@@ -35,3 +35,14 @@ RemoveJobMoney = function(job, amount)
         return exports['qb-management']:RemoveMoney(job, amount)
     end
 end
+
+-- Ensure compatibility with latest qb-core framework
+if GetResourceState('qb-core') == 'started' then
+    QBCore = exports['qb-core']:GetCoreObject()
+end
+
+GetPlayerFromId = function(src)
+    if QBCore then
+        return QBCore.Functions.GetPlayer(src)
+    end
+end

@@ -30,7 +30,7 @@ end
 GetMoney = function(src)
     if QBCore then
         local Player = GetPlayerFromId(src)
-        return Player.PlayerData.money.cash
+        return Player.PlayerData.money['cash']
     end
 end
 
